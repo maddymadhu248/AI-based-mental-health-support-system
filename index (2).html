@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<!-- saved from url=(0177)file:///C:/Users/acer/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/LocalState/sessions/916D5DA19C03F1597A8250AB7EFAB4F4251AB49A/transfers/2026-28/mindora-1.html -->
+<html lang="en" data-theme="light"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MINDORA — Smart Student Mental Wellness Platform</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link href="./MINDORA — Smart Student Mental Wellness Platform_files/css2" rel="stylesheet">
+<style>
+:root{
+  --lavender:#8C7AE6;
+  --lavender-dark:#6E5FD1;
+  --sage:#4F9D82;
+  --coral:#F2846B;
+  --ink:#1B1B3A;
+  --mist:#F3F1FA;
+  --surface:#FFFFFF;
+  --border:#E4E0F5;
+  --text:#26243F;
+  --text-dim:#6B6885;
+  --danger:#E15B64;
+  --radius:16px;
+  --shadow:0 8px 24px rgba(44,32,90,0.08);
+  --font-display:'Fraunces', serif;
+  --font-body:'Inter', sans-serif;
+  --font-mono:'IBM Plex Mono', monospace;
+}
+html[data-theme="dark"]{
+  --ink:#F3F1FA;
+  --mist:#14141F;
+  --surface:#1E1E2E;
+  --border:#33324A;
+  --text:#EDEBFB;
+  --text-dim:#A7A4C4;
+  --shadow:0 8px 24px rgba(0,0,0,0.35);
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:var(--font-body);background:var(--mist);color:var(--text);transition:background .3s,color .3s;}
+h1,h2,h3,.brand{font-family:var(--font-display);}
+button{font-family:var(--font-body);cursor:pointer;}
+a{color:inherit;}
+::selection{background:var(--lavender);color:#fff;}
+@media (prefers-reduced-motion: reduce){*{animation-duration:0.001ms !important;}}
+
+/* ---------- Halo signature element ---------- */
+.halo-wrap{position:relative;width:120px;height:120px;display:flex;align-items:center;justify-content:center;margin:0 auto;}
+.halo-ring{position:absolute;border-radius:50%;border:1.5px solid var(--lavender);opacity:.55;animation:breathe 4.5s ease-in-out infinite;}
+.halo-ring.r2{animation-delay:.6s;border-color:var(--sage);}
+.halo-ring.r3{animation-delay:1.2s;border-color:var(--coral);}
+.halo-core{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--lavender),var(--sage));box-shadow:0 0 24px rgba(140,122,230,.5);}
+@keyframes breathe{
+  0%{width:40px;height:40px;opacity:.75;}
+  50%{width:120px;height:120px;opacity:.1;}
+  100%{width:40px;height:40px;opacity:.75;}
+}
+.halo-ring.r1{width:40px;height:40px;}
+.halo-ring.r2{width:40px;height:40px;}
+.halo-ring.r3{width:40px;height:40px;}
+
+/* ---------- Auth pages ---------- */
+.auth-shell{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;}
+.auth-card{background:var(--surface);border:1px solid var(--border);border-radius:24px;box-shadow:var(--shadow);max-width:420px;width:100%;padding:40px 36px;}
+.brand{font-size:28px;font-weight:600;text-align:center;letter-spacing:.5px;margin:18px 0 4px;}
+.brand-sub{text-align:center;color:var(--text-dim);font-size:13px;margin-bottom:24px;letter-spacing:.3px;}
+.field{margin-bottom:16px;}
+.field label{display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:var(--text-dim);}
+.field input,.field select,.field textarea{width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:10px;background:var(--mist);color:var(--text);font-size:14px;font-family:var(--font-body);}
+.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--lavender);outline-offset:1px;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 20px;border-radius:10px;border:none;font-weight:600;font-size:14px;transition:transform .15s, box-shadow .15s;}
+.btn:active{transform:scale(.97);}
+.btn-primary{background:var(--lavender);color:#fff;width:100%;}
+.btn-primary:hover{background:var(--lavender-dark);}
+.btn-outline{background:transparent;border:1px solid var(--border);color:var(--text);}
+.btn-outline:hover{border-color:var(--lavender);}
+.btn-danger{background:var(--danger);color:#fff;}
+.btn-sm{padding:8px 14px;font-size:13px;}
+.auth-links{text-align:center;font-size:13px;margin-top:16px;color:var(--text-dim);}
+.auth-links a,.link-btn{color:var(--lavender);font-weight:600;text-decoration:none;background:none;border:none;cursor:pointer;font-size:inherit;}
+.hint-box{background:var(--mist);border:1px dashed var(--border);border-radius:10px;padding:10px 12px;font-size:12px;color:var(--text-dim);margin-top:14px;font-family:var(--font-mono);}
+.error-text{color:var(--danger);font-size:12px;margin-top:6px;}
+.success-text{color:var(--sage);font-size:12px;margin-top:6px;}
+
+/* ---------- App shell ---------- */
+.app-shell{display:flex;min-height:100vh;}
+.sidebar{width:236px;background:var(--surface);border-right:1px solid var(--border);padding:22px 14px;display:flex;flex-direction:column;position:sticky;top:0;height:100vh;overflow-y:auto;flex-shrink:0;}
+.sidebar-brand{display:flex;align-items:center;gap:10px;padding:0 8px 18px;font-family:var(--font-display);font-weight:600;font-size:20px;border-bottom:1px solid var(--border);margin-bottom:14px;}
+.sidebar-brand .dot{width:12px;height:12px;border-radius:50%;background:linear-gradient(135deg,var(--lavender),var(--sage));}
+.nav-group-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--text-dim);padding:14px 10px 6px;}
+.nav-link{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;font-size:14px;color:var(--text-dim);text-decoration:none;margin-bottom:2px;border:none;background:none;width:100%;text-align:left;font-family:var(--font-body);}
+.nav-link:hover{background:var(--mist);color:var(--text);}
+.nav-link.active{background:var(--lavender);color:#fff;font-weight:600;}
+.nav-icon{width:18px;text-align:center;}
+.sidebar-footer{margin-top:auto;padding-top:14px;border-top:1px solid var(--border);}
+
+.main-col{flex:1;min-width:0;}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:5;}
+.topbar-title{font-family:var(--font-display);font-size:20px;font-weight:600;}
+.topbar-actions{display:flex;align-items:center;gap:14px;}
+.icon-btn{background:var(--mist);border:1px solid var(--border);border-radius:10px;width:38px;height:38px;display:flex;align-items:center;justify-content:center;font-size:16px;position:relative;}
+.badge-dot{position:absolute;top:-4px;right:-4px;background:var(--coral);color:#fff;font-size:10px;border-radius:10px;padding:1px 5px;font-weight:700;}
+.avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--lavender),var(--sage));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;}
+.content{padding:28px;max-width:1080px;margin:0 auto;}
+
+/* ---------- Cards / generic ---------- */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:22px;margin-bottom:18px;box-shadow:var(--shadow);}
+.card h3{margin-top:0;}
+.grid{display:grid;gap:16px;}
+.grid-2{grid-template-columns:repeat(auto-fit,minmax(230px,1fr));}
+.grid-3{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));}
+.stat{background:var(--mist);border-radius:12px;padding:16px;}
+.stat .num{font-family:var(--font-display);font-size:28px;font-weight:600;}
+.stat .lab{font-size:12px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.05em;}
+.pill{display:inline-block;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:600;}
+.pill-low{background:#E4F5EC;color:var(--sage);}
+.pill-mod{background:#FFF1DE;color:#B5750E;}
+.pill-high{background:#FCE6E4;color:var(--danger);}
+html[data-theme="dark"] .pill-low{background:#173428;}
+html[data-theme="dark"] .pill-mod{background:#3a2c14;}
+html[data-theme="dark"] .pill-high{background:#3a1f1f;}
+.divider{height:1px;background:var(--border);margin:16px 0;}
+.empty-state{text-align:center;padding:40px 20px;color:var(--text-dim);}
+.toast{position:fixed;bottom:24px;right:24px;background:var(--ink);color:#fff;padding:12px 18px;border-radius:10px;font-size:13px;box-shadow:var(--shadow);z-index:999;animation:toastIn .25s ease;}
+html[data-theme="dark"] .toast{background:var(--lavender);}
+@keyframes toastIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+
+/* ---------- Chat ---------- */
+.chat-box{display:flex;flex-direction:column;height:460px;}
+.chat-messages{flex:1;overflow-y:auto;padding:16px;background:var(--mist);border-radius:12px;display:flex;flex-direction:column;gap:10px;}
+.msg{max-width:72%;padding:10px 14px;border-radius:14px;font-size:14px;line-height:1.4;}
+.msg.me{align-self:flex-end;background:var(--lavender);color:#fff;border-bottom-right-radius:4px;}
+.msg.bot,.msg.peer{align-self:flex-start;background:var(--surface);border:1px solid var(--border);border-bottom-left-radius:4px;}
+.msg .who{font-size:11px;color:var(--text-dim);margin-bottom:2px;font-weight:600;}
+.chat-input-row{display:flex;gap:8px;margin-top:12px;}
+.chat-input-row input{flex:1;}
+
+/* ---------- Mood ---------- */
+.mood-picker{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin:18px 0;}
+.mood-opt{font-size:34px;background:var(--mist);border:2px solid transparent;border-radius:16px;padding:14px 18px;transition:transform .15s,border-color .15s;}
+.mood-opt:hover{transform:translateY(-3px);}
+.mood-opt.selected{border-color:var(--lavender);background:#fff;}
+html[data-theme="dark"] .mood-opt.selected{background:var(--surface);}
+
+/* ---------- Breathing ---------- */
+.breathe-stage{display:flex;flex-direction:column;align-items:center;padding:30px 0;}
+.breathe-circle{width:160px;height:160px;border-radius:50%;background:radial-gradient(circle at 30% 30%,var(--lavender),var(--sage));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-family:var(--font-display);font-size:18px;transition:transform 4s ease-in-out;}
+.breathe-circle.in{transform:scale(1.35);}
+.breathe-circle.out{transform:scale(1);}
+
+/* ---------- Table ---------- */
+table{width:100%;border-collapse:collapse;font-size:13.5px;}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--border);}
+th{color:var(--text-dim);font-weight:600;text-transform:uppercase;font-size:11px;letter-spacing:.05em;}
+
+/* ---------- Toggle switch ---------- */
+.switch{position:relative;display:inline-block;width:42px;height:24px;}
+.switch input{opacity:0;width:0;height:0;}
+.slider-tog{position:absolute;cursor:pointer;inset:0;background:var(--border);border-radius:24px;transition:.2s;}
+.slider-tog:before{content:"";position:absolute;height:18px;width:18px;left:3px;bottom:3px;background:#fff;border-radius:50%;transition:.2s;}
+input:checked + .slider-tog{background:var(--lavender);}
+input:checked + .slider-tog:before{transform:translateX(18px);}
+
+/* ---------- Progress bar ---------- */
+.progress-track{background:var(--mist);border-radius:10px;height:10px;overflow:hidden;}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--lavender),var(--sage));border-radius:10px;transition:width .4s;}
+
+.badge-item{display:flex;align-items:center;gap:12px;padding:12px;border:1px solid var(--border);border-radius:12px;}
+.badge-icon{width:42px;height:42px;border-radius:50%;background:var(--mist);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.badge-icon.locked{opacity:.35;filter:grayscale(1);}
+
+.resource-card{border-left:4px solid var(--lavender);}
+.emergency-hero{background:linear-gradient(135deg,var(--danger),var(--coral));color:#fff;border-radius:var(--radius);padding:26px;}
+.emergency-hero a{color:#fff;font-weight:700;}
+
+@media (max-width:820px){
+  .sidebar{position:fixed;left:-260px;z-index:50;transition:left .2s;box-shadow:var(--shadow);}
+  .sidebar.open{left:0;}
+  .content{padding:16px;}
+  .topbar{padding:12px 16px;}
+}
+.menu-toggle{display:none;}
+@media (max-width:820px){.menu-toggle{display:flex;}}
+</style>
+</head>
+<body>
+<div id="app"><div class="auth-shell"><div class="auth-card">
+    <div class="halo-wrap"><div class="halo-ring r1"></div><div class="halo-ring r2"></div><div class="halo-ring r3"></div><div class="halo-core"></div></div>
+    <div class="brand">MINDORA</div>
+    <div class="brand-sub">Smart Student Mental Wellness Platform</div>
+    
+  <form onsubmit="handleLogin(event)">
+    <div class="field"><label>Email</label><input type="email" id="login-email" placeholder="you@student.com" required=""></div>
+    <div class="field"><label>Password</label><input type="password" id="login-password" placeholder="Your password" required=""></div>
+    <div id="login-error"></div>
+    <button class="btn btn-primary" type="submit">Log in</button>
+  </form>
+  <div class="auth-links">
+    <button class="link-btn" onclick="go(&#39;forgot&#39;)">Forgot password?</button> &nbsp;•&nbsp;
+    Don't have an account? <button class="link-btn" onclick="go(&#39;signup&#39;)">Sign up</button>
+  </div>
+  </div></div><div id="toast-slot"></div></div>
+
+<script>
+/* =========================================================
+   MINDORA — in-memory application state (no backend/storage)
+   ========================================================= */
+const state = {
+  page: 'login',
+  theme: 'light',
+  toastMsg: null,
+  sidebarOpen: false,
+  currentUser: null,
+  users: [
+    {name:'Admin', email:'admin@mindora.com', password:'Admin@123', role:'admin', points:0, badges:[], meditationSessions:0, peerMsgCount:0, emergencyContact:'', notifPrefs:{email:true,push:true}},
+    {name:'Aarav Sharma', email:'aarav@student.com', password:'Student@123', role:'student', points:35, badges:['first-step'], meditationSessions:1, peerMsgCount:0, emergencyContact:'', notifPrefs:{email:true,push:true}},
+  ],
+  moods: [], // {email, date, mood, value, note}
+  assessments: [], // {email, date, score, category}
+  appointments: [], // {id, email, counselor, date, time, reason, status}
+  notifications: [], // {id, email, text, date, read}
+  feedbacks: [], // {id, email, type, message, date, status}
+  chatMessages: [], // {sender:'me'|'bot', text}
+  peerMessages: [], // {sender, text}
+  lastAssessment: null,
+  resetEmail: null,
+};
+
+const MOODS = [
+  {emoji:'😄', label:'Great', value:5},
+  {emoji:'🙂', label:'Good', value:4},
+  {emoji:'😐', label:'Okay', value:3},
+  {emoji:'☹️', label:'Low', value:2},
+  {emoji:'😢', label:'Struggling', value:1},
+];
+
+const QUESTIONS = [
+  "I feel overwhelmed by my academic workload.",
+  "I have trouble sleeping because of stress or worry.",
+  "I feel anxious about exams or assignments.",
+  "I find it hard to concentrate on my studies.",
+  "I feel isolated or disconnected from friends or family.",
+  "I experience physical symptoms of stress (headaches, fatigue).",
+  "I feel hopeless or unsure about the future.",
+  "I have lost interest in activities I used to enjoy.",
+  "I feel pressure to meet others' expectations of me.",
+  "I find it difficult to relax or unwind.",
+];
+const OPTIONS = ["Never","Rarely","Sometimes","Often"];
+
+const RESOURCES = [
+  {cat:'Anxiety', title:'Understanding Exam Anxiety', body:'Learn how anxiety shows up before tests and grounding techniques to steady your body and mind before you walk in.'},
+  {cat:'Depression', title:'Recognising Low Mood Early', body:'Common signs of low mood in students, and small daily actions that can help you feel more like yourself.'},
+  {cat:'Sleep', title:'Building a Wind-Down Routine', body:'A simple 30-minute pre-sleep routine to help your mind switch off after a long study day.'},
+  {cat:'Stress', title:'Managing Deadline Pressure', body:'Breaking large workloads into manageable steps, and why perfection is not the goal.'},
+  {cat:'Academic Pressure', title:'Talking to Family About Grades', body:'Scripts and approaches for conversations with parents or guardians about academic pressure.'},
+  {cat:'Sleep', title:'Why Screens Before Bed Matter', body:'The link between late-night screen use and restless sleep, and easy swaps to try tonight.'},
+];
+
+const COUNSELORS = ['Dr. Meera Iyer — Clinical Psychologist', 'Mr. Rohan Das — Student Counselor', 'Dr. Priya Nair — Wellness Therapist'];
+const TIME_SLOTS = ['10:00 AM','11:30 AM','1:00 PM','3:00 PM','4:30 PM','6:00 PM'];
+
+/* ---------------- utility ---------------- */
+function uid(){ return Math.random().toString(36).slice(2,10); }
+function todayStr(){ return new Date().toISOString().slice(0,10); }
+function fmtDate(d){ return new Date(d).toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'}); }
+function showToast(msg){ state.toastMsg = msg; render(); setTimeout(()=>{ state.toastMsg=null; renderToastOnly(); }, 2600); }
+function renderToastOnly(){ const el=document.getElementById('toast-slot'); if(el) el.innerHTML = state.toastMsg ? `<div class="toast">${state.toastMsg}</div>` : ''; }
+function go(page){ state.page = page; state.sidebarOpen=false; render(); window.scrollTo(0,0); }
+function currentUser(){ return state.currentUser; }
+function findUser(email){ return state.users.find(u=>u.email.toLowerCase()===email.toLowerCase()); }
+
+function addNotification(text){
+  const u = currentUser();
+  if(!u) return;
+  state.notifications.unshift({id:uid(), email:u.email, text, date:new Date().toISOString(), read:false});
+}
+
+function awardPoints(n, reason){
+  const u = currentUser(); if(!u) return;
+  u.points += n;
+  addNotification(`+${n} points — ${reason}`);
+  checkBadges();
+}
+
+const BADGE_DEFS = [
+  {id:'first-step', icon:'🌱', name:'First Step', desc:'Joined MINDORA', check:u=>true},
+  {id:'self-aware', icon:'🧠', name:'Self-Aware', desc:'Completed a self-assessment', check:u=>state.assessments.some(a=>a.email===u.email)},
+  {id:'tracker-7', icon:'🔥', name:'Consistent Tracker', desc:'7-day mood logging streak', check:u=>moodStreak(u.email)>=7},
+  {id:'zen-master', icon:'🧘', name:'Zen Master', desc:'Completed 5 meditation sessions', check:u=>u.meditationSessions>=5},
+  {id:'helper', icon:'🤝', name:'Peer Helper', desc:'Active in peer support chat', check:u=>u.peerMsgCount>=3},
+];
+
+function checkBadges(){
+  const u = currentUser(); if(!u) return;
+  BADGE_DEFS.forEach(b=>{
+    if(!u.badges.includes(b.id) && b.check(u)){
+      u.badges.push(b.id);
+      addNotification(`🏅 New badge unlocked: ${b.name}`);
+    }
+  });
+}
+
+function moodStreak(email){
+  const entries = state.moods.filter(m=>m.email===email).map(m=>m.date).sort().reverse();
+  if(entries.length===0) return 0;
+  let streak = 0;
+  let cursor = new Date();
+  for(let i=0;i<entries.length;i++){
+    const expected = new Date(cursor); expected.setDate(expected.getDate()-i);
+    if(entries[i] === expected.toISOString().slice(0,10)) streak++;
+    else break;
+  }
+  return streak;
+}
+
+/* ---------------- validation helpers ---------------- */
+function isValidEmail(e){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e); }
+function isStrongPassword(p){ return p.length>=6; }
+
+/* =========================================================
+   RENDER — top level router
+   ========================================================= */
+function render(){
+  document.documentElement.setAttribute('data-theme', state.theme);
+  const app = document.getElementById('app');
+  let html = '';
+  const publicPages = ['login','signup','forgot'];
+  if(!state.currentUser && !publicPages.includes(state.page)) state.page = 'login';
+
+  if(publicPages.includes(state.page)){
+    html = renderAuthWrapper();
+  } else {
+    html = renderAppShell();
+  }
+  app.innerHTML = html + `<div id="toast-slot">${state.toastMsg ? `<div class="toast">${state.toastMsg}</div>` : ''}</div>`;
+}
+
+/* ---------------- AUTH pages ---------------- */
+function renderAuthWrapper(){
+  let inner = '';
+  if(state.page==='login') inner = pageLogin();
+  else if(state.page==='signup') inner = pageSignup();
+  else if(state.page==='forgot') inner = pageForgot();
+  return `<div class="auth-shell"><div class="auth-card">
+    <div class="halo-wrap"><div class="halo-ring r1"></div><div class="halo-ring r2"></div><div class="halo-ring r3"></div><div class="halo-core"></div></div>
+    <div class="brand">MINDORA</div>
+    <div class="brand-sub">Smart Student Mental Wellness Platform</div>
+    ${inner}
+  </div></div>`;
+}
+
+function pageLogin(){
+  return `
+  <form onsubmit="handleLogin(event)">
+    <div class="field"><label>Email</label><input type="email" id="login-email" placeholder="you@student.com" required></div>
+    <div class="field"><label>Password</label><input type="password" id="login-password" placeholder="Your password" required></div>
+    <div id="login-error"></div>
+    <button class="btn btn-primary" type="submit">Log in</button>
+  </form>
+  <div class="auth-links">
+    <button class="link-btn" onclick="go('forgot')">Forgot password?</button> &nbsp;•&nbsp;
+    Don't have an account? <button class="link-btn" onclick="go('signup')">Sign up</button>
+  </div>`;
+}
+
+function handleLogin(e){
+  e.preventDefault();
+  const email = document.getElementById('login-email').value.trim();
+  const pass = document.getElementById('login-password').value;
+  const u = findUser(email);
+  const errEl = document.getElementById('login-error');
+  if(!u || u.password !== pass){
+    errEl.innerHTML = `<div class="error-text">Incorrect email or password. Please try again.</div>`;
+    return;
+  }
+  state.currentUser = u;
+  checkBadges();
+  go('dashboard');
+  showToast(`Welcome back, ${u.name.split(' ')[0]}!`);
+}
+
+function pageSignup(){
+  return `
+  <form onsubmit="handleSignup(event)">
+    <div class="field"><label>Full name</label><input type="text" id="su-name" required></div>
+    <div class="field"><label>Email</label><input type="email" id="su-email" required></div>
+    <div class="field"><label>Password</label><input type="password" id="su-password" placeholder="At least 6 characters" required></div>
+    <div class="field"><label>Confirm password</label><input type="password" id="su-password2" required></div>
+    <div id="signup-error"></div>
+    <button class="btn btn-primary" type="submit">Create account</button>
+  </form>
+  <div class="auth-links">Already have an account? <button class="link-btn" onclick="go('login')">Log in</button></div>`;
+}
+
+function handleSignup(e){
+  e.preventDefault();
+  const name = document.getElementById('su-name').value.trim();
+  const email = document.getElementById('su-email').value.trim();
+  const p1 = document.getElementById('su-password').value;
+  const p2 = document.getElementById('su-password2').value;
+  const errEl = document.getElementById('signup-error');
+  if(!isValidEmail(email)){ errEl.innerHTML = `<div class="error-text">Enter a valid email address.</div>`; return; }
+  if(findUser(email)){ errEl.innerHTML = `<div class="error-text">An account with this email already exists.</div>`; return; }
+  if(!isStrongPassword(p1)){ errEl.innerHTML = `<div class="error-text">Password must be at least 6 characters.</div>`; return; }
+  if(p1 !== p2){ errEl.innerHTML = `<div class="error-text">Passwords do not match.</div>`; return; }
+  const newUser = {name, email, password:p1, role:'student', points:10, badges:[], meditationSessions:0, peerMsgCount:0, emergencyContact:'', notifPrefs:{email:true,push:true}};
+  state.users.push(newUser);
+  state.currentUser = newUser;
+  addNotification("Welcome to MINDORA! We're glad you're here.");
+  checkBadges();
+  go('dashboard');
+  showToast('Account created — welcome to MINDORA!');
+}
+
+function pageForgot(){
+  return `
+  <form onsubmit="handleForgot(event)">
+    <div class="field"><label>Enter your registered email</label><input type="email" id="fg-email" required></div>
+    <div id="forgot-msg"></div>
+    <button class="btn btn-primary" type="submit">Send reset instructions</button>
+  </form>
+  <div id="reset-form-slot"></div>
+  <div class="auth-links"><button class="link-btn" onclick="go('login')">Back to login</button></div>`;
+}
+
+function handleForgot(e){
+  e.preventDefault();
+  const email = document.getElementById('fg-email').value.trim();
+  const msgEl = document.getElementById('forgot-msg');
+  const u = findUser(email);
+  if(!u){ msgEl.innerHTML = `<div class="error-text">No account found with that email.</div>`; document.getElementById('reset-form-slot').innerHTML=''; return; }
+  msgEl.innerHTML = `<div class="success-text">Identity verified. Set a new password below.</div>`;
+  state.resetEmail = email;
+  document.getElementById('reset-form-slot').innerHTML = `
+    <div class="field"><label>New password</label><input type="password" id="fg-new-pass" placeholder="At least 6 characters"></div>
+    <button class="btn btn-outline" style="width:100%" onclick="handleResetPassword()">Update password</button>
+  `;
+}
+
+function handleResetPassword(){
+  const pass = document.getElementById('fg-new-pass').value;
+  if(!isStrongPassword(pass)){ showToast('Password must be at least 6 characters.'); return; }
+  const u = findUser(state.resetEmail);
+  u.password = pass;
+  showToast('Password updated. Please log in.');
+  go('login');
+}
+
+/* ---------------- APP SHELL (logged-in) ---------------- */
+const NAV = [
+  {group:'Overview', items:[
+    {id:'dashboard', icon:'🏠', label:'Dashboard'},
+    {id:'profile', icon:'👤', label:'Profile'},
+  ]},
+  {group:'Wellness', items:[
+    {id:'assessment', icon:'📝', label:'Self-Assessment'},
+    {id:'mood', icon:'🙂', label:'Mood Tracker'},
+    {id:'mood-history', icon:'📊', label:'Mood Analytics'},
+    {id:'meditation', icon:'🧘', label:'Meditation'},
+  ]},
+  {group:'Support', items:[
+    {id:'chatbot', icon:'🤖', label:'AI Chatbot'},
+    {id:'peer', icon:'💬', label:'Peer Support'},
+    {id:'booking', icon:'📅', label:'Book Counseling'},
+    {id:'resources', icon:'📚', label:'Resources'},
+    {id:'emergency', icon:'🚨', label:'Emergency Help'},
+  ]},
+  {group:'You', items:[
+    {id:'rewards', icon:'🏆', label:'Rewards'},
+    {id:'notifications', icon:'🔔', label:'Notifications'},
+    {id:'feedback', icon:'📮', label:'Feedback'},
+    {id:'settings', icon:'⚙️', label:'Settings'},
+  ]},
+];
+
+function renderAppShell(){
+  const u = currentUser();
+  const isAdmin = u.role === 'admin';
+  let navHtml = NAV.map(g=>`
+    <div class="nav-group-label">${g.group}</div>
+    ${g.items.map(it=>`<button class="nav-link ${state.page===it.id?'active':''}" onclick="go('${it.id}')"><span class="nav-icon">${it.icon}</span>${it.label}</button>`).join('')}
+  `).join('');
+  if(isAdmin){
+    navHtml += `<div class="nav-group-label">Admin</div>
+    <button class="nav-link ${state.page==='admin'?'active':''}" onclick="go('admin')"><span class="nav-icon">🛡️</span>Admin Dashboard</button>`;
+  }
+
+  const pageTitles = {dashboard:'Dashboard', profile:'Your Profile', assessment:'Self-Assessment Test', 'assessment-result':'Assessment Result', mood:'Mood Tracker','mood-history':'Mood Analytics', chatbot:'AI Chatbot', peer:'Peer Support Chat', booking:'Book Counseling', 'appointment-confirmation':'Appointment Confirmed', meditation:'Meditation & Relaxation', resources:'Mental Health Resources', emergency:'Emergency Help', settings:'Settings', notifications:'Notifications', admin:'Admin Dashboard', feedback:'Feedback & Report Issue', rewards:'Rewards & Gamification'};
+
+  const unread = state.notifications.filter(n=>n.email===u.email && !n.read).length;
+
+  let content = '';
+  switch(state.page){
+    case 'dashboard': content = pageDashboard(); break;
+    case 'profile': content = pageProfile(); break;
+    case 'assessment': content = pageAssessment(); break;
+    case 'assessment-result': content = pageAssessmentResult(); break;
+    case 'mood': content = pageMood(); break;
+    case 'mood-history': content = pageMoodHistory(); break;
+    case 'chatbot': content = pageChatbot(); break;
+    case 'peer': content = pagePeer(); break;
+    case 'booking': content = pageBooking(); break;
+    case 'appointment-confirmation': content = pageAppointmentConfirmation(); break;
+    case 'meditation': content = pageMeditation(); break;
+    case 'resources': content = pageResources(); break;
+    case 'emergency': content = pageEmergency(); break;
+    case 'settings': content = pageSettings(); break;
+    case 'notifications': content = pageNotifications(); break;
+    case 'admin': content = isAdmin ? pageAdmin() : `<div class="empty-state">You don't have access to this page.</div>`; break;
+    case 'feedback': content = pageFeedback(); break;
+    case 'rewards': content = pageRewards(); break;
+    default: content = pageDashboard();
+  }
+
+  return `
+  <div class="app-shell">
+    <div class="sidebar ${state.sidebarOpen?'open':''}">
+      <div class="sidebar-brand"><span class="dot"></span> MINDORA</div>
+      ${navHtml}
+      <div class="sidebar-footer">
+        <button class="nav-link" onclick="handleLogout()"><span class="nav-icon">🚪</span>Log out</button>
+      </div>
+    </div>
+    <div class="main-col">
+      <div class="topbar">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <button class="icon-btn menu-toggle" onclick="toggleSidebar()">☰</button>
+          <div class="topbar-title">${pageTitles[state.page]||''}</div>
+        </div>
+        <div class="topbar-actions">
+          <button class="icon-btn" onclick="go('notifications')" title="Notifications">🔔${unread>0?`<span class="badge-dot">${unread}</span>`:''}</button>
+          <button class="icon-btn" onclick="go('settings')" title="Settings">⚙️</button>
+          <div class="avatar" onclick="go('profile')" style="cursor:pointer;" title="${u.name}">${u.name.split(' ').map(s=>s[0]).slice(0,2).join('')}</div>
+        </div>
+      </div>
+      <div class="content">${content}</div>
+    </div>
+  </div>`;
+}
+
+function toggleSidebar(){ state.sidebarOpen = !state.sidebarOpen; render(); }
+function handleLogout(){ state.currentUser=null; state.page='login'; render(); }
+
+/* ---------------- DASHBOARD ---------------- */
+function pageDashboard(){
+  const u = currentUser();
+  const myMoods = state.moods.filter(m=>m.email===u.email);
+  const lastMood = myMoods[myMoods.length-1];
+  const myAssessments = state.assessments.filter(a=>a.email===u.email);
+  const upcoming = state.appointments.filter(a=>a.email===u.email && a.status!=='Cancelled').sort((a,b)=> new Date(a.date+' '+a.time) - new Date(b.date+' '+b.time))[0];
+  const streak = moodStreak(u.email);
+
+  return `
+  <div class="card" style="background:linear-gradient(135deg, var(--lavender), var(--sage));color:#fff;border:none;">
+    <h2 style="margin:0;">Hi ${u.name.split(' ')[0]}, how are you feeling today?</h2>
+    <p style="opacity:.9;margin:6px 0 16px;">A small check-in takes less than a minute.</p>
+    <button class="btn" style="background:#fff;color:var(--lavender-dark);" onclick="go('mood')">Log today's mood</button>
+  </div>
+
+  <div class="grid grid-3">
+    <div class="stat"><div class="num">${streak}</div><div class="lab">Day Streak</div></div>
+    <div class="stat"><div class="num">${u.points}</div><div class="lab">Wellness Points</div></div>
+    <div class="stat"><div class="num">${u.badges.length}</div><div class="lab">Badges Earned</div></div>
+  </div>
+
+  <div class="grid grid-2" style="margin-top:18px;">
+    <div class="card">
+      <h3>Latest mood</h3>
+      ${lastMood ? `<div style="font-size:40px;">${MOODS.find(m=>m.value===lastMood.value)?.emoji||'🙂'}</div><p style="color:var(--text-dim);">${fmtDate(lastMood.date)} — "${lastMood.note||'No note added'}"</p>` : `<div class="empty-state">No mood logged yet. <button class="link-btn" onclick="go('mood')">Log one now</button></div>`}
+    </div>
+    <div class="card">
+      <h3>Last self-assessment</h3>
+      ${myAssessments.length ? (()=>{ const a = myAssessments[myAssessments.length-1]; return `<p>Score: <b>${a.score}/30</b> <span class="pill ${a.category==='Low'?'pill-low':a.category==='Moderate'?'pill-mod':'pill-high'}">${a.category}</span></p><p style="color:var(--text-dim);">${fmtDate(a.date)}</p>`; })() : `<div class="empty-state">Take your first assessment. <button class="link-btn" onclick="go('assessment')">Start now</button></div>`}
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Upcoming appointment</h3>
+    ${upcoming ? `<p><b>${upcoming.counselor}</b><br>${fmtDate(upcoming.date)} at ${upcoming.time} — <span class="pill pill-low">${upcoming.status}</span></p>` : `<div class="empty-state">No sessions booked. <button class="link-btn" onclick="go('booking')">Book counseling</button></div>`}
+  </div>
+
+  <div class="grid grid-3">
+    <button class="btn btn-outline" onclick="go('chatbot')">💬 Talk to AI Chatbot</button>
+    <button class="btn btn-outline" onclick="go('meditation')">🧘 Start Meditation</button>
+    <button class="btn btn-outline" onclick="go('resources')">📚 Browse Resources</button>
+  </div>
+  `;
+}
+
+/* ---------------- PROFILE ---------------- */
+function pageProfile(){
+  const u = currentUser();
+  return `
+  <div class="card" style="text-align:center;">
+    <div class="avatar" style="width:80px;height:80px;font-size:26px;margin:0 auto 12px;">${u.name.split(' ').map(s=>s[0]).slice(0,2).join('')}</div>
+    <h2 style="margin:6px 0 0;">${u.name}</h2>
+    <p style="color:var(--text-dim);margin:4px 0 0;">${u.email}</p>
+    <span class="pill pill-low" style="margin-top:8px;display:inline-block;">${u.role==='admin'?'Administrator':'Student'}</span>
+  </div>
+  <div class="card">
+    <h3>Edit details</h3>
+    <div class="field"><label>Full name</label><input type="text" id="pf-name" value="${u.name}"></div>
+    <div class="field"><label>Emergency contact (name & phone)</label><input type="text" id="pf-emergency" value="${u.emergencyContact||''}" placeholder="e.g. Mom — +91 98765 43210"></div>
+    <button class="btn btn-primary" style="width:auto;" onclick="saveProfile()">Save changes</button>
+  </div>
+  <div class="grid grid-3">
+    <div class="stat"><div class="num">${u.points}</div><div class="lab">Points</div></div>
+    <div class="stat"><div class="num">${state.moods.filter(m=>m.email===u.email).length}</div><div class="lab">Mood Logs</div></div>
+    <div class="stat"><div class="num">${state.assessments.filter(a=>a.email===u.email).length}</div><div class="lab">Assessments</div></div>
+  </div>`;
+}
+function saveProfile(){
+  const u = currentUser();
+  u.name = document.getElementById('pf-name').value.trim() || u.name;
+  u.emergencyContact = document.getElementById('pf-emergency').value.trim();
+  showToast('Profile updated.');
+  render();
+}
+
+/* ---------------- SELF ASSESSMENT ---------------- */
+function pageAssessment(){
+  const rows = QUESTIONS.map((q,i)=>`
+    <div class="card" style="margin-bottom:12px;">
+      <p style="font-weight:600;margin:0 0 10px;">${i+1}. ${q}</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        ${OPTIONS.map((o,val)=>`<label style="flex:1;min-width:90px;text-align:center;padding:8px;border:1px solid var(--border);border-radius:8px;background:var(--mist);cursor:pointer;">
+          <input type="radio" name="q${i}" value="${val}" style="margin-right:6px;" required>${o}
+        </label>`).join('')}
+      </div>
+    </div>`).join('');
+  return `
+  <div class="card" style="background:var(--mist);">
+    <p style="margin:0;">This quick check-in helps you understand your current stress levels. It is a self-awareness tool, <b>not a clinical diagnosis</b>. If you're in crisis, go to <button class="link-btn" onclick="go('emergency')">Emergency Help</button> right away.</p>
+  </div>
+  <form id="assessment-form" onsubmit="handleAssessmentSubmit(event)">
+    ${rows}
+    <button class="btn btn-primary" style="width:auto;" type="submit">See my result</button>
+  </form>`;
+}
+
+function handleAssessmentSubmit(e){
+  e.preventDefault();
+  let score = 0;
+  for(let i=0;i<QUESTIONS.length;i++){
+    const val = document.querySelector(`input[name="q${i}"]:checked`);
+    if(!val){ showToast('Please answer every question.'); return; }
+    score += parseInt(val.value,10);
+  }
+  const category = score<=10 ? 'Low' : score<=20 ? 'Moderate' : 'High';
+  const u = currentUser();
+  const record = {email:u.email, date: new Date().toISOString(), score, category};
+  state.assessments.push(record);
+  state.lastAssessment = record;
+  awardPoints(10, 'Completed self-assessment');
+  addNotification('Your self-assessment result is ready.');
+  go('assessment-result');
+}
+
+function pageAssessmentResult(){
+  const a = state.lastAssessment || state.assessments.filter(x=>x.email===currentUser().email).slice(-1)[0];
+  if(!a) return `<div class="empty-state">No assessment yet. <button class="link-btn" onclick="go('assessment')">Take one now</button></div>`;
+  const advice = {
+    Low: "You're managing things well right now. Keep up healthy habits like sleep, movement, and staying connected with friends.",
+    Moderate: "You may be carrying some stress. Try daily mood tracking, a short meditation session, and reach out if things feel heavier.",
+    High: "You may be under significant stress. We strongly recommend booking a counseling session and exploring our support resources.",
+  }[a.category];
+  const pillClass = a.category==='Low'?'pill-low':a.category==='Moderate'?'pill-mod':'pill-high';
+  return `
+  <div class="card" style="text-align:center;">
+    <div class="halo-wrap" style="margin-bottom:10px;"><div class="halo-ring r1"></div><div class="halo-ring r2"></div><div class="halo-core"></div></div>
+    <h2>Score: ${a.score} / 30</h2>
+    <span class="pill ${pillClass}" style="font-size:14px;">${a.category} stress level</span>
+    <p style="max-width:480px;margin:16px auto 0;color:var(--text-dim);">${advice}</p>
+  </div>
+  <div class="grid grid-3">
+    <button class="btn btn-outline" onclick="go('booking')">📅 Book Counseling</button>
+    <button class="btn btn-outline" onclick="go('meditation')">🧘 Try Meditation</button>
+    <button class="btn btn-outline" onclick="go('resources')">📚 View Resources</button>
+  </div>
+  <div class="card"><h3>Your history</h3>${assessmentHistoryTable()}</div>`;
+}
+
+function assessmentHistoryTable(){
+  const rows = state.assessments.filter(a=>a.email===currentUser().email).slice().reverse();
+  if(!rows.length) return `<div class="empty-state">No history yet.</div>`;
+  return `<table><tr><th>Date</th><th>Score</th><th>Category</th></tr>${rows.map(r=>`<tr><td>${fmtDate(r.date)}</td><td>${r.score}/30</td><td><span class="pill ${r.category==='Low'?'pill-low':r.category==='Moderate'?'pill-mod':'pill-high'}">${r.category}</span></td></tr>`).join('')}</table>`;
+}
+
+/* ---------------- MOOD TRACKER ---------------- */
+let selectedMoodValue = null;
+function pageMood(){
+  selectedMoodValue = null;
+  const today = state.moods.find(m=>m.email===currentUser().email && m.date===todayStr());
+  return `
+  <div class="card">
+    <h3 style="text-align:center;">How are you feeling right now?</h3>
+    <div class="mood-picker">
+      ${MOODS.map(m=>`<button class="mood-opt" id="mood-${m.value}" onclick="selectMood(${m.value})" title="${m.label}">${m.emoji}</button>`).join('')}
+    </div>
+    <div class="field"><label>Add a note (optional)</label><textarea id="mood-note" rows="3" placeholder="What's on your mind?">${today?today.note||'':''}</textarea></div>
+    <button class="btn btn-primary" style="width:auto;" onclick="saveMood()">${today ? "Update today's mood":'Save mood'}</button>
+    ${today ? `<p style="color:var(--text-dim);font-size:13px;margin-top:8px;">You already logged a mood today — saving again will update it.</p>` : ''}
+  </div>`;
+}
+function selectMood(v){
+  selectedMoodValue = v;
+  MOODS.forEach(m=>document.getElementById(`mood-${m.value}`).classList.toggle('selected', m.value===v));
+}
+function saveMood(){
+  if(selectedMoodValue===null){ showToast('Please select a mood first.'); return; }
+  const u = currentUser();
+  const note = document.getElementById('mood-note').value.trim();
+  const existing = state.moods.find(m=>m.email===u.email && m.date===todayStr());
+  if(existing){ existing.value = selectedMoodValue; existing.note = note; }
+  else {
+    state.moods.push({email:u.email, date:todayStr(), value:selectedMoodValue, note});
+    awardPoints(5, 'Daily mood check-in');
+  }
+  addNotification('Mood logged for today.');
+  showToast('Mood saved. Thanks for checking in!');
+  go('mood-history');
+}
+
+/* ---------------- MOOD HISTORY / ANALYTICS ---------------- */
+function pageMoodHistory(){
+  const rows = state.moods.filter(m=>m.email===currentUser().email).slice().sort((a,b)=>a.date.localeCompare(b.date));
+  if(!rows.length) return `<div class="empty-state">No mood data yet. <button class="link-btn" onclick="go('mood')">Log your first mood</button></div>`;
+  const last14 = rows.slice(-14);
+  const avg = (rows.reduce((s,r)=>s+r.value,0)/rows.length).toFixed(1);
+  const streak = moodStreak(currentUser().email);
+
+  const w=600,h=180,pad=24;
+  const stepX = last14.length>1 ? (w-2*pad)/(last14.length-1) : 0;
+  const pts = last14.map((r,i)=>{
+    const x = pad + i*stepX;
+    const y = h - pad - ((r.value-1)/4)*(h-2*pad);
+    return `${x.toFixed(1)},${y.toFixed(1)}`;
+  }).join(' ');
+  const dots = last14.map((r,i)=>{
+    const x = pad + i*stepX;
+    const y = h - pad - ((r.value-1)/4)*(h-2*pad);
+    return `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="4" fill="var(--lavender)"><title>${fmtDate(r.date)}: ${MOODS.find(m=>m.value===r.value).label}</title></circle>`;
+  }).join('');
+
+  return `
+  <div class="grid grid-3">
+    <div class="stat"><div class="num">${avg}</div><div class="lab">Average Mood (1–5)</div></div>
+    <div class="stat"><div class="num">${streak}</div><div class="lab">Current Streak</div></div>
+    <div class="stat"><div class="num">${rows.length}</div><div class="lab">Total Entries</div></div>
+  </div>
+  <div class="card">
+    <h3>Trend (last ${last14.length} entries)</h3>
+    <svg viewBox="0 0 ${w} ${h}" style="width:100%;height:auto;">
+      <polyline points="${pts}" fill="none" stroke="var(--sage)" stroke-width="2"/>
+      ${dots}
+    </svg>
+  </div>
+  <div class="card">
+    <h3>Log</h3>
+    <table><tr><th>Date</th><th>Mood</th><th>Note</th></tr>
+    ${rows.slice().reverse().map(r=>`<tr><td>${fmtDate(r.date)}</td><td>${MOODS.find(m=>m.value===r.value).emoji} ${MOODS.find(m=>m.value===r.value).label}</td><td>${r.note||'—'}</td></tr>`).join('')}
+    </table>
+  </div>`;
+}
+
+/* ---------------- AI CHATBOT ---------------- */
+function pageChatbot(){
+  if(state.chatMessages.length===0){
+    state.chatMessages.push({sender:'bot', text:`Hi ${currentUser().name.split(' ')[0]}, I'm Mira, your MINDORA companion. I'm not a substitute for professional care, but I'm here to listen. What's on your mind today?`});
+  }
+  return `
+  <div class="card chat-box">
+    <div class="chat-messages" id="chat-messages">
+      ${state.chatMessages.map(m=>`<div class="msg ${m.sender==='me'?'me':'bot'}">${m.sender==='bot'?'<div class="who">Mira · AI Companion</div>':''}${m.text}</div>`).join('')}
+    </div>
+    <div class="chat-input-row">
+      <input type="text" id="chat-input" placeholder="Type a message..." onkeydown="if(event.key==='Enter'){sendChat();}">
+      <button class="btn btn-primary" style="width:auto;" onclick="sendChat()">Send</button>
+    </div>
+  </div>`;
+}
+function scrollChatToBottom(id){ const el=document.getElementById(id); if(el) el.scrollTop = el.scrollHeight; }
+
+function botReply(text){
+  const t = text.toLowerCase();
+  if(/(suicide|kill myself|end my life|self harm|hurt myself|want to die)/.test(t)){
+    return `That sounds incredibly heavy, and I'm really glad you told me. Your safety matters most right now — please visit the Emergency Help page for hotlines you can call immediately, or reach out to someone you trust nearby.`;
+  }
+  if(/(exam|test|assignment|study|deadline)/.test(t)) return `Exam pressure can feel relentless. Try breaking your work into 25-minute focused blocks with short breaks — and remember, one exam doesn't define you. Want a quick breathing exercise?`;
+  if(/(sleep|insomnia|tired|can't sleep)/.test(t)) return `Sleep trouble is common under stress. A consistent wind-down routine can help — you can find one in Mental Health Resources. Would you like me to open that for you?`;
+  if(/(sad|down|depress|hopeless)/.test(t)) return `I'm sorry you're feeling this way. You don't have to carry it alone — logging your mood can help track patterns, and talking to a counselor can really help too.`;
+  if(/(anxious|anxiety|nervous|panic)/.test(t)) return `Anxiety can feel overwhelming in the moment. Try the 5-4-3-2-1 grounding technique: name 5 things you see, 4 you can touch, 3 you hear, 2 you smell, 1 you taste.`;
+  if(/(lonely|alone|isolated)/.test(t)) return `Feeling disconnected is hard. Our Peer Support Chat is a space with others who understand — would you like to try it?`;
+  if(/(thank|thanks)/.test(t)) return `Anytime. I'm proud of you for checking in with yourself today.`;
+  if(/(hello|hi|hey)/.test(t)) return `Hello! How has your day been so far?`;
+  const generic = ["I hear you. Can you tell me a bit more about that?","That makes sense. How long have you been feeling this way?","Thank you for sharing that with me. What usually helps you feel a little better?","I'm here with you. Would journaling or a short meditation help right now?"];
+  return generic[Math.floor(Math.random()*generic.length)];
+}
+
+function sendChat(){
+  const input = document.getElementById('chat-input');
+  const text = input.value.trim();
+  if(!text) return;
+  state.chatMessages.push({sender:'me', text});
+  input.value='';
+  render();
+  scrollChatToBottom('chat-messages');
+  setTimeout(()=>{
+    state.chatMessages.push({sender:'bot', text: botReply(text)});
+    render();
+    scrollChatToBottom('chat-messages');
+  }, 550);
+}
+
+/* ---------------- PEER SUPPORT CHAT ---------------- */
+const PEER_NAMES = ['Riya_23','Kabir_S','AnonPanda','NightOwl_99'];
+const PEER_REPLIES = [
+  "Sending support your way — you're not alone in feeling like this.",
+  "I've felt something similar during midterms. It gets a bit lighter with time, promise.",
+  "Have you tried talking to a counselor here? It helped me a lot.",
+  "Thanks for sharing, that takes courage. We're all rooting for you.",
+  "Same boat honestly. Let's push through this week together.",
+];
+function pagePeer(){
+  if(state.peerMessages.length===0){
+    state.peerMessages.push({sender:'peer', name:'Community', text:'Welcome to the MINDORA peer support room — a judgment-free space to share and support fellow students.'});
+  }
+  return `
+  <div class="card chat-box">
+    <div class="chat-messages" id="peer-messages">
+      ${state.peerMessages.map(m=>`<div class="msg ${m.sender==='me'?'me':'peer'}">${m.sender==='peer'?`<div class="who">${m.name}</div>`:''}${m.text}</div>`).join('')}
+    </div>
+    <div class="chat-input-row">
+      <input type="text" id="peer-input" placeholder="Share with the community..." onkeydown="if(event.key==='Enter'){sendPeer();}">
+      <button class="btn btn-primary" style="width:auto;" onclick="sendPeer()">Send</button>
+    </div>
+  </div>
+  <p style="color:var(--text-dim);font-size:12px;">Please avoid sharing personal identifying details. This room is monitored for safety.</p>`;
+}
+function sendPeer(){
+  const input = document.getElementById('peer-input');
+  const text = input.value.trim();
+  if(!text) return;
+  state.peerMessages.push({sender:'me', text});
+  input.value='';
+  const u = currentUser();
+  u.peerMsgCount = (u.peerMsgCount||0)+1;
+  checkBadges();
+  render();
+  scrollChatToBottom('peer-messages');
+  setTimeout(()=>{
+    const name = PEER_NAMES[Math.floor(Math.random()*PEER_NAMES.length)];
+    const reply = PEER_REPLIES[Math.floor(Math.random()*PEER_REPLIES.length)];
+    state.peerMessages.push({sender:'peer', name, text:reply});
+    render();
+    scrollChatToBottom('peer-messages');
+  }, 700);
+}
+
+/* ---------------- COUNSELING BOOKING ---------------- */
+function pageBooking(){
+  return `
+  <div class="card">
+    <h3>Book a counseling session</h3>
+    <form onsubmit="handleBooking(event)">
+      <div class="field"><label>Counselor</label><select id="bk-counselor">${COUNSELORS.map(c=>`<option>${c}</option>`).join('')}</select></div>
+      <div class="field"><label>Date</label><input type="date" id="bk-date" min="${todayStr()}" required></div>
+      <div class="field"><label>Time slot</label><select id="bk-time">${TIME_SLOTS.map(t=>`<option>${t}</option>`).join('')}</select></div>
+      <div class="field"><label>What would you like to talk about? (optional)</label><textarea id="bk-reason" rows="3"></textarea></div>
+      <button class="btn btn-primary" style="width:auto;" type="submit">Confirm booking</button>
+    </form>
+  </div>
+  <div class="card"><h3>Your appointments</h3>${appointmentsTable()}</div>`;
+}
+function appointmentsTable(){
+  const rows = state.appointments.filter(a=>a.email===currentUser().email).slice().reverse();
+  if(!rows.length) return `<div class="empty-state">No appointments booked yet.</div>`;
+  return `<table><tr><th>Counselor</th><th>Date</th><th>Time</th><th>Status</th><th></th></tr>
+  ${rows.map(a=>`<tr><td>${a.counselor}</td><td>${fmtDate(a.date)}</td><td>${a.time}</td><td><span class="pill ${a.status==='Confirmed'?'pill-low':a.status==='Cancelled'?'pill-high':'pill-mod'}">${a.status}</span></td>
+  <td>${a.status!=='Cancelled'?`<button class="btn btn-sm btn-outline" onclick="cancelAppointment('${a.id}')">Cancel</button>`:''}</td></tr>`).join('')}
+  </table>`;
+}
+function handleBooking(e){
+  e.preventDefault();
+  const counselor = document.getElementById('bk-counselor').value;
+  const date = document.getElementById('bk-date').value;
+  const time = document.getElementById('bk-time').value;
+  const reason = document.getElementById('bk-reason').value.trim();
+  if(!date){ showToast('Please choose a date.'); return; }
+  const appt = {id:uid(), email:currentUser().email, counselor, date, time, reason, status:'Confirmed'};
+  state.appointments.push(appt);
+  state.lastAppointment = appt;
+  awardPoints(5, 'Booked a counseling session');
+  addNotification(`Appointment confirmed with ${counselor} on ${fmtDate(date)} at ${time}.`);
+  go('appointment-confirmation');
+}
+function cancelAppointment(id){
+  const a = state.appointments.find(x=>x.id===id);
+  if(a){ a.status='Cancelled'; addNotification('An appointment was cancelled.'); showToast('Appointment cancelled.'); render(); }
+}
+function pageAppointmentConfirmation(){
+  const a = state.lastAppointment || state.appointments.filter(x=>x.email===currentUser().email).slice(-1)[0];
+  if(!a) return `<div class="empty-state">No appointment to show. <button class="link-btn" onclick="go('booking')">Book one now</button></div>`;
+  return `
+  <div class="card" style="text-align:center;">
+    <div style="font-size:44px;">✅</div>
+    <h2>You're booked!</h2>
+    <p style="color:var(--text-dim);">A confirmation has been added to your notifications.</p>
+    <div class="divider"></div>
+    <table style="max-width:400px;margin:0 auto;text-align:left;">
+      <tr><th>Counselor</th><td>${a.counselor}</td></tr>
+      <tr><th>Date</th><td>${fmtDate(a.date)}</td></tr>
+      <tr><th>Time</th><td>${a.time}</td></tr>
+      <tr><th>Status</th><td><span class="pill pill-low">${a.status}</span></td></tr>
+    </table>
+    <div style="margin-top:18px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+      <button class="btn btn-outline" onclick="cancelAppointment('${a.id}')">Cancel appointment</button>
+      <button class="btn btn-primary" style="width:auto;" onclick="go('booking')">Book another session</button>
+    </div>
+  </div>`;
+}
+
+/* ---------------- MEDITATION ---------------- */
+let breatheTimer = null, breatheSecondsLeft = 0, breathePhase='in';
+function pageMeditation(){
+  return `
+  <div class="card breathe-stage">
+    <div class="breathe-circle out" id="breathe-circle">Breathe</div>
+    <p style="color:var(--text-dim);margin-top:16px;" id="breathe-status">Choose a session length to begin.</p>
+    <div style="display:flex;gap:10px;margin-top:10px;">
+      <button class="btn btn-outline btn-sm" onclick="startBreathing(60)">1 min</button>
+      <button class="btn btn-outline btn-sm" onclick="startBreathing(180)">3 min</button>
+      <button class="btn btn-outline btn-sm" onclick="startBreathing(300)">5 min</button>
+      <button class="btn btn-sm" style="background:var(--danger);color:#fff;" onclick="stopBreathing()">Stop</button>
+    </div>
+  </div>
+  <div class="grid grid-2">
+    <div class="card"><h3>5-4-3-2-1 Grounding</h3><p style="color:var(--text-dim);">Name 5 things you see, 4 you can touch, 3 you hear, 2 you smell, and 1 you taste. This pulls your mind back into the present moment.</p></div>
+    <div class="card"><h3>Progressive Muscle Relaxation</h3><p style="color:var(--text-dim);">Starting at your toes, tense each muscle group for 5 seconds, then release. Work slowly up to your shoulders and face.</p></div>
+    <div class="card"><h3>Gratitude Journaling</h3><p style="color:var(--text-dim);">Write down three things, however small, that went okay today. Consistency matters more than length.</p></div>
+    <div class="card"><h3>Box Breathing</h3><p style="color:var(--text-dim);">Inhale for 4 counts, hold for 4, exhale for 4, hold for 4. Repeat for several rounds to steady your nervous system.</p></div>
+  </div>`;
+}
+function startBreathing(seconds){
+  stopBreathing();
+  breatheSecondsLeft = seconds;
+  const circle = document.getElementById('breathe-circle');
+  const statusEl = document.getElementById('breathe-status');
+  function cycle(){
+    breathePhase = breathePhase==='in' ? 'out':'in';
+    circle.className = 'breathe-circle ' + breathePhase;
+    circle.textContent = breathePhase==='in' ? 'Inhale...' : 'Exhale...';
+  }
+  cycle();
+  const cycleInterval = setInterval(cycle, 4000);
+  const countdown = setInterval(()=>{
+    breatheSecondsLeft--;
+    if(statusEl) statusEl.textContent = `${Math.floor(breatheSecondsLeft/60)}:${String(breatheSecondsLeft%60).padStart(2,'0')} remaining`;
+    if(breatheSecondsLeft<=0){
+      clearInterval(cycleInterval); clearInterval(countdown);
+      circle.className='breathe-circle out'; circle.textContent='Done 🌿';
+      if(statusEl) statusEl.textContent = 'Session complete. Well done.';
+      const u = currentUser(); u.meditationSessions = (u.meditationSessions||0)+1;
+      awardPoints(5, 'Completed a meditation session');
+      checkBadges();
+      showToast('Meditation session complete!');
+    }
+  },1000);
+  breatheTimer = {cycleInterval, countdown};
+}
+function stopBreathing(){
+  if(breatheTimer){ clearInterval(breatheTimer.cycleInterval); clearInterval(breatheTimer.countdown); breatheTimer=null; }
+  const circle = document.getElementById('breathe-circle');
+  const statusEl = document.getElementById('breathe-status');
+  if(circle){ circle.className='breathe-circle out'; circle.textContent='Breathe'; }
+  if(statusEl) statusEl.textContent = 'Choose a session length to begin.';
+}
+
+/* ---------------- RESOURCES ---------------- */
+function pageResources(){
+  const cats = [...new Set(RESOURCES.map(r=>r.cat))];
+  return `
+  <div class="grid grid-2">
+    ${RESOURCES.map(r=>`
+    <div class="card resource-card">
+      <span class="pill pill-mod">${r.cat}</span>
+      <h3 style="margin:10px 0 6px;">${r.title}</h3>
+      <p style="color:var(--text-dim);margin:0;">${r.body}</p>
+    </div>`).join('')}
+  </div>
+  <div class="card">
+    <h3>Helplines</h3>
+    <p><b>KIRAN Mental Health Helpline (India):</b> 1800-599-0019 (24/7, toll-free)</p>
+    <p><b>iCall Psychosocial Helpline (India):</b> +91 9152987821</p>
+    <p><b>988 Suicide & Crisis Lifeline (US):</b> Call or text 988</p>
+    <p style="color:var(--text-dim);font-size:13px;">If you're in immediate danger, visit the Emergency Help page or contact local emergency services.</p>
+  </div>`;
+}
+
+/* ---------------- EMERGENCY ---------------- */
+function pageEmergency(){
+  const u = currentUser();
+  return `
+  <div class="emergency-hero">
+    <h2 style="margin-top:0;">You matter. Help is available right now.</h2>
+    <p>If you or someone you know is in immediate danger, please contact local emergency services immediately.</p>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:14px;">
+      <a href="tel:18005990019" style="text-decoration:underline;">📞 KIRAN Helpline: 1800-599-0019</a>
+      <a href="tel:9152987821" style="text-decoration:underline;">📞 iCall: +91 9152987821</a>
+      <a href="tel:988" style="text-decoration:underline;">📞 US 988 Lifeline</a>
+    </div>
+  </div>
+  <div class="card">
+    <h3>Quick grounding steps right now</h3>
+    <ol style="color:var(--text-dim);">
+      <li>Sit or stand somewhere steady, and feel your feet on the ground.</li>
+      <li>Breathe in slowly for 4 counts, then out for 6 counts. Repeat 5 times.</li>
+      <li>Name one safe, kind thing you can do in the next 5 minutes.</li>
+      <li>Reach out to someone you trust — you don't have to explain everything, just that you need support.</li>
+    </ol>
+  </div>
+  <div class="card">
+    <h3>Notify your emergency contact</h3>
+    <p style="color:var(--text-dim);">${u.emergencyContact ? `Saved contact: <b>${u.emergencyContact}</b>` : 'No emergency contact saved yet. Add one in your Profile.'}</p>
+    ${u.emergencyContact ? `<button class="btn btn-primary" style="width:auto;" onclick="notifyEmergencyContact()">Send check-in alert</button>` : `<button class="btn btn-outline" onclick="go('profile')">Add emergency contact</button>`}
+  </div>`;
+}
+function notifyEmergencyContact(){
+  showToast('Alert sent to your emergency contact.');
+  addNotification('Emergency check-in alert sent to your contact.');
+}
+
+/* ---------------- SETTINGS ---------------- */
+function pageSettings(){
+  const u = currentUser();
+  return `
+  <div class="card">
+    <h3>Appearance</h3>
+    <div style="display:flex;align-items:center;justify-content:space-between;">
+      <span>Dark mode</span>
+      <label class="switch"><input type="checkbox" ${state.theme==='dark'?'checked':''} onchange="toggleTheme()"><span class="slider-tog"></span></label>
+    </div>
+  </div>
+  <div class="card">
+    <h3>Notification preferences</h3>
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+      <span>Email notifications</span>
+      <label class="switch"><input type="checkbox" ${u.notifPrefs.email?'checked':''} onchange="togglePref('email')"><span class="slider-tog"></span></label>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:space-between;">
+      <span>Push notifications</span>
+      <label class="switch"><input type="checkbox" ${u.notifPrefs.push?'checked':''} onchange="togglePref('push')"><span class="slider-tog"></span></label>
+    </div>
+  </div>
+  <div class="card">
+    <h3>Change password</h3>
+    <div class="field"><label>Current password</label><input type="password" id="set-cur-pass"></div>
+    <div class="field"><label>New password</label><input type="password" id="set-new-pass"></div>
+    <button class="btn btn-outline" onclick="changePassword()">Update password</button>
+  </div>
+  <div class="card">
+    <h3>Account</h3>
+    <button class="btn btn-danger" onclick="handleLogout()">Log out</button>
+  </div>`;
+}
+function toggleTheme(){ state.theme = state.theme==='dark' ? 'light' : 'dark'; render(); }
+function togglePref(key){ const u=currentUser(); u.notifPrefs[key] = !u.notifPrefs[key]; showToast('Preference updated.'); }
+function changePassword(){
+  const u = currentUser();
+  const cur = document.getElementById('set-cur-pass').value;
+  const next = document.getElementById('set-new-pass').value;
+  if(cur !== u.password){ showToast('Current password is incorrect.'); return; }
+  if(!isStrongPassword(next)){ showToast('New password must be at least 6 characters.'); return; }
+  u.password = next;
+  showToast('Password updated successfully.');
+}
+
+/* ---------------- NOTIFICATIONS ---------------- */
+function pageNotifications(){
+  const mine = state.notifications.filter(n=>n.email===currentUser().email);
+  if(!mine.length) return `<div class="empty-state">No notifications yet.</div>`;
+  return `
+  <button class="btn btn-outline btn-sm" style="margin-bottom:14px;" onclick="markAllRead()">Mark all as read</button>
+  ${mine.map(n=>`<div class="card" style="display:flex;justify-content:space-between;align-items:center;${n.read?'opacity:.6;':''}">
+    <div><p style="margin:0;">${n.text}</p><p style="margin:4px 0 0;font-size:12px;color:var(--text-dim);">${new Date(n.date).toLocaleString()}</p></div>
+    ${!n.read?`<span class="pill pill-mod">New</span>`:''}
+  </div>`).join('')}`;
+}
+function markAllRead(){ state.notifications.forEach(n=>{ if(n.email===currentUser().email) n.read=true; }); render(); }
+
+/* ---------------- ADMIN ---------------- */
+function pageAdmin(){
+  const totalUsers = state.users.filter(u=>u.role==='student').length;
+  const totalAssessments = state.assessments.length;
+  const totalAppointments = state.appointments.length;
+  const allMoods = state.moods;
+  const avgMood = allMoods.length ? (allMoods.reduce((s,m)=>s+m.value,0)/allMoods.length).toFixed(1) : '—';
+  return `
+  <div class="grid grid-3">
+    <div class="stat"><div class="num">${totalUsers}</div><div class="lab">Registered Students</div></div>
+    <div class="stat"><div class="num">${totalAssessments}</div><div class="lab">Assessments Taken</div></div>
+    <div class="stat"><div class="num">${totalAppointments}</div><div class="lab">Appointments Booked</div></div>
+    <div class="stat"><div class="num">${avgMood}</div><div class="lab">Platform Avg. Mood</div></div>
+  </div>
+  <div class="card">
+    <h3>Users</h3>
+    <table><tr><th>Name</th><th>Email</th><th>Points</th><th>Badges</th></tr>
+    ${state.users.filter(u=>u.role==='student').map(u=>`<tr><td>${u.name}</td><td>${u.email}</td><td>${u.points}</td><td>${u.badges.length}</td></tr>`).join('')}
+    </table>
+  </div>
+  <div class="card">
+    <h3>Feedback & reported issues</h3>
+    ${state.feedbacks.length ? `<table><tr><th>Type</th><th>Message</th><th>From</th><th>Status</th><th></th></tr>
+    ${state.feedbacks.slice().reverse().map(f=>`<tr><td>${f.type}</td><td>${f.message}</td><td>${f.email}</td><td><span class="pill ${f.status==='Resolved'?'pill-low':'pill-mod'}">${f.status}</span></td>
+    <td>${f.status!=='Resolved'?`<button class="btn btn-sm btn-outline" onclick="resolveFeedback('${f.id}')">Resolve</button>`:''}</td></tr>`).join('')}
+    </table>` : `<div class="empty-state">No feedback submitted yet.</div>`}
+  </div>
+  <div class="card">
+    <h3>Appointments overview</h3>
+    ${state.appointments.length ? `<table><tr><th>Student</th><th>Counselor</th><th>Date</th><th>Time</th><th>Status</th></tr>
+    ${state.appointments.slice().reverse().map(a=>`<tr><td>${a.email}</td><td>${a.counselor}</td><td>${fmtDate(a.date)}</td><td>${a.time}</td><td>${a.status}</td></tr>`).join('')}
+    </table>`:`<div class="empty-state">No appointments booked yet.</div>`}
+  </div>`;
+}
+function resolveFeedback(id){ const f = state.feedbacks.find(x=>x.id===id); if(f){ f.status='Resolved'; showToast('Marked as resolved.'); render(); } }
+
+/* ---------------- FEEDBACK ---------------- */
+function pageFeedback(){
+  return `
+  <div class="card">
+    <h3>Report an issue or share feedback</h3>
+    <form onsubmit="handleFeedback(event)">
+      <div class="field"><label>Type</label><select id="fb-type"><option>Bug</option><option>Suggestion</option><option>Content Issue</option><option>Other</option></select></div>
+      <div class="field"><label>Message</label><textarea id="fb-message" rows="4" required placeholder="Tell us what happened or what you'd like to see..."></textarea></div>
+      <button class="btn btn-primary" style="width:auto;" type="submit">Submit feedback</button>
+    </form>
+  </div>
+  <div class="card"><h3>Your submissions</h3>
+  ${(()=>{ const mine = state.feedbacks.filter(f=>f.email===currentUser().email).slice().reverse();
+    return mine.length ? `<table><tr><th>Type</th><th>Message</th><th>Status</th></tr>${mine.map(f=>`<tr><td>${f.type}</td><td>${f.message}</td><td><span class="pill ${f.status==='Resolved'?'pill-low':'pill-mod'}">${f.status}</span></td></tr>`).join('')}</table>` : `<div class="empty-state">You haven't submitted any feedback yet.</div>`; })()}
+  </div>`;
+}
+function handleFeedback(e){
+  e.preventDefault();
+  const type = document.getElementById('fb-type').value;
+  const message = document.getElementById('fb-message').value.trim();
+  if(!message){ showToast('Please add a message.'); return; }
+  state.feedbacks.push({id:uid(), email:currentUser().email, type, message, date:new Date().toISOString(), status:'Open'});
+  showToast('Thank you — your feedback was submitted.');
+  go('feedback');
+}
+
+/* ---------------- REWARDS / GAMIFICATION ---------------- */
+function pageRewards(){
+  const u = currentUser();
+  const leaderboard = state.users.filter(x=>x.role==='student').slice().sort((a,b)=>b.points-a.points);
+  return `
+  <div class="card" style="text-align:center;">
+    <div class="num" style="font-family:var(--font-display);font-size:40px;">${u.points}</div>
+    <div class="lab">Total Wellness Points</div>
+  </div>
+  <div class="card">
+    <h3>Badges</h3>
+    <div class="grid grid-3">
+      ${BADGE_DEFS.map(b=>{
+        const earned = u.badges.includes(b.id);
+        return `<div class="badge-item"><div class="badge-icon ${earned?'':'locked'}">${b.icon}</div><div><b>${b.name}</b><br><span style="font-size:12px;color:var(--text-dim);">${b.desc}</span></div></div>`;
+      }).join('')}
+    </div>
+  </div>
+  <div class="card">
+    <h3>Leaderboard</h3>
+    <table><tr><th>#</th><th>Student</th><th>Points</th></tr>
+    ${leaderboard.map((s,i)=>`<tr style="${s.email===u.email?'font-weight:700;':''}"><td>${i+1}</td><td>${s.name}${s.email===u.email?' (you)':''}</td><td>${s.points}</td></tr>`).join('')}
+    </table>
+  </div>
+  <div class="card">
+    <h3>Ways to earn points</h3>
+    <ul style="color:var(--text-dim);">
+      <li>Daily mood check-in — +5 pts</li>
+      <li>Completing a self-assessment — +10 pts</li>
+      <li>Finishing a meditation session — +5 pts</li>
+      <li>Booking a counseling session — +5 pts</li>
+    </ul>
+  </div>`;
+}
+
+/* ---------------- INIT ---------------- */
+render();
+</script>
+
+
+</body></html>
